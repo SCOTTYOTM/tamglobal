@@ -408,7 +408,7 @@
               TAM Global is working toward a model in which medicine is guided by data, translational systems reduce delay between discovery and care, and regenerative technologies can address conditions once treated as irreversible.
             </p>
             <div class="hero-actions" style="justify-content:center; margin-top:30px;">
-              <a class="btn btn-primary" href="#top">Back to top</a>
+              <button class="btn btn-primary" type="button" data-open-contact>Contact us</button>
               <a class="btn btn-secondary" href="#model">Review the model</a>
             </div>
           </div>
@@ -485,6 +485,33 @@
       <span>A translational medical innovation organization.</span>
     </div>
   </footer>
+
+  <div class="contact-modal" id="contact-modal" aria-hidden="true">
+    <div class="contact-modal-backdrop" data-close-contact></div>
+    <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <button class="contact-modal-close" type="button" aria-label="Close contact form" data-close-contact>×</button>
+      <h2 id="contact-modal-title">Contact us</h2>
+      <form class="contact-form" netlify>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" autocomplete="tel" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Details</span>
+          <textarea name="details" rows="5" required></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Send inquiry</button>
+      </form>
+    </div>
+  </div>
 
   <script src="./assets/site.js"></script>
 </body>

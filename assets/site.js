@@ -60,8 +60,9 @@ function setActive(activeCard) {
   cards.forEach((card) => card.classList.toggle('active', card === activeCard));
 }
 
+const teamCards = document.querySelectorAll('.team-reveal-card');
 if (!prefersReducedMotion) {
-  document.querySelectorAll('.team-reveal-card').forEach((card) => {
+  teamCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -81,6 +82,15 @@ if (!prefersReducedMotion) {
     });
   });
 }
+
+teamCards.forEach((card) => {
+  card.addEventListener('click', () => {
+    if (window.innerWidth > 640) return;
+    const isExpanded = card.classList.contains('is-expanded');
+    teamCards.forEach((item) => item.classList.remove('is-expanded'));
+    if (!isExpanded) card.classList.add('is-expanded');
+  });
+});
 
 const ecosystemOrbit = document.querySelector('.ecosystem-orbit');
 const ecosystemTooltip = document.getElementById('ecosystem-tooltip');
@@ -118,6 +128,24 @@ const heroVideo = document.querySelector('.hero-video');
 if (heroVideo) {
   heroVideo.play().catch(() => {
     heroVideo.setAttribute('controls', 'controls');
+  });
+}
+
+const contactModal = document.getElementById('contact-modal');
+const openContactButtons = document.querySelectorAll('[data-open-contact]');
+const closeContactButtons = document.querySelectorAll('[data-close-contact]');
+
+if (contactModal) {
+  const setContactOpen = (open) => {
+    contactModal.classList.toggle('open', open);
+    contactModal.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  openContactButtons.forEach((button) => button.addEventListener('click', () => setContactOpen(true)));
+  closeContactButtons.forEach((button) => button.addEventListener('click', () => setContactOpen(false)));
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setContactOpen(false);
   });
 }
 
