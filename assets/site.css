@@ -1099,11 +1099,12 @@ footer {
     padding: 40px 0;
   }
   .statement-visual-shell {
-    width: min(100% - 12px, 1800px);
-    margin-top: 10px;
+    width: min(var(--max), calc(100% - 24px));
+    margin: 10px auto 0;
   }
   .ecosystem-orbit-full {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
+    min-height: auto;
   }
   section { padding: 92px 0; }
   .hero { padding-top: 100px; }
@@ -1113,15 +1114,18 @@ footer {
   .btn { width: 100%; }
   .hero-video { object-position: center center; }
   .ecosystem-orbit {
-    min-height: 520px;
-    padding: 6px;
+    min-height: 0;
+    padding: 0;
+    border-radius: 24px;
   }
   .ecosystem-hero-image {
-    inset: 6px;
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
-    transform: scale(1.12);
-    object-position: 72% center;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+    object-position: center;
+    display: block;
   }
   .ecosystem-orbit:hover .ecosystem-hero-image {
     transform: scale(1);
@@ -1129,7 +1133,7 @@ footer {
   .ecosystem-caption {
     top: auto;
     bottom: 10px;
-    width: min(260px, calc(100% - 16px));
+    width: min(240px, calc(100% - 16px));
     padding: 8px 10px;
   }
   .ecosystem-caption strong { font-size: 0.72rem; margin-bottom: 6px; }
@@ -1139,14 +1143,14 @@ footer {
     width: 78px;
     height: 78px;
   }
-  .node-global { top: 50%; left: 50%; width: 118px; height: 118px; transform: translate(-50%, -50%); }
-  .node-bio { top: 14%; left: 50.6%; transform: translateX(-50%); }
-  .node-data { top: 21%; left: 66%; transform: translateX(-50%); width: 68px; height: 68px; }
-  .node-cpi { top: 42%; left: 64%; transform: translateX(-50%); width: 72px; height: 72px; }
-  .node-pharmacy { top: 64%; left: 60%; transform: translateX(-50%); width: 68px; height: 68px; }
-  .node-diagnostics { top: 58%; left: 41%; transform: translateX(-50%); width: 72px; height: 72px; }
-  .node-ai { top: 45%; left: 33.9%; transform: translateX(-50%); width: 72px; height: 72px; }
-  .node-center-company { top: 26%; left: 37.1%; transform: translateX(-50%); width: 72px; height: 72px; }
+  .node-global { top: 50%; left: 50%; width: 86px; height: 86px; transform: translate(-50%, -50%); }
+  .node-bio { top: 14%; left: 50.6%; transform: translateX(-50%); width: 52px; height: 52px; }
+  .node-data { top: 23%; left: 65%; transform: translateX(-50%); width: 52px; height: 52px; }
+  .node-cpi { top: 44%; left: 64%; transform: translateX(-50%); width: 56px; height: 56px; }
+  .node-pharmacy { top: 66%; left: 60%; transform: translateX(-50%); width: 52px; height: 52px; }
+  .node-diagnostics { top: 59%; left: 40%; transform: translateX(-50%); width: 56px; height: 56px; }
+  .node-ai { top: 45%; left: 34%; transform: translateX(-50%); width: 56px; height: 56px; }
+  .node-center-company { top: 27%; left: 37%; transform: translateX(-50%); width: 56px; height: 56px; }
   .stack-card h3,
   .pathway-card h3,
   .timeline-item h3,
