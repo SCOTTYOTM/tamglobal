@@ -1075,9 +1075,10 @@ footer {
 }
 @media (max-width: 640px) {
   .container, .nav-inner, .hero-grid, .footer-row, .mobile-menu { width: min(var(--max), calc(100% - 24px)); }
-  .brand-mark { width: 42px; height: 42px; }
-  .brand-text strong { font-size: 1.04rem; }
-  .brand-text span { font-size: 0.7rem; }
+  .brand { gap: 10px; align-items: flex-start; }
+  .brand-mark { width: 42px; height: 42px; flex: 0 0 42px; }
+  .brand-text strong { font-size: 1rem; line-height: 1.05; }
+  .brand-text span { font-size: 0.64rem; letter-spacing: 0.05em; }
   nav { padding: 14px 0; }
   .statement-panel, .closing-box, .hero-card, .stack-rail, .stack-card, .team-reveal-content, .principle, .metric, .pathway-card, .timeline-shell, .evidence-panel, .contact-card, .contact-panel, .cta-strip-inner { padding: 24px; }
   .closing-content {
@@ -1102,34 +1103,53 @@ footer {
   .btn { width: 100%; }
   .hero-video { object-position: center center; }
   .ecosystem-orbit {
-    min-height: 820px;
+    min-height: 700px;
+    padding: 8px;
   }
   .ecosystem-hero-image {
-    transform: scale(0.9);
+    inset: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    transform: scale(0.98);
   }
   .ecosystem-orbit:hover .ecosystem-hero-image {
-    transform: scale(0.92);
+    transform: scale(1);
   }
+  .ecosystem-caption {
+    top: auto;
+    bottom: 12px;
+    width: min(300px, calc(100% - 20px));
+    padding: 10px 12px;
+  }
+  .ecosystem-caption strong { font-size: 0.72rem; margin-bottom: 6px; }
+  .ecosystem-caption span,
+  .ecosystem-caption-description { font-size: 0.68rem; line-height: 1.45; }
   .ecosystem-node {
-    width: 96px;
-    height: 96px;
+    width: 78px;
+    height: 78px;
   }
-  .ecosystem-node-copy {
-    max-width: 150px;
-    padding: 9px 10px;
+  .node-global { top: 50%; left: 50%; width: 118px; height: 118px; transform: translate(-50%, -50%); }
+  .node-bio { top: 14%; left: 50.6%; transform: translateX(-50%); }
+  .node-data { top: 21%; left: 66%; transform: translateX(-50%); width: 68px; height: 68px; }
+  .node-cpi { top: 42%; left: 64%; transform: translateX(-50%); width: 72px; height: 72px; }
+  .node-pharmacy { top: 64%; left: 60%; transform: translateX(-50%); width: 68px; height: 68px; }
+  .node-diagnostics { top: 58%; left: 41%; transform: translateX(-50%); width: 72px; height: 72px; }
+  .node-ai { top: 45%; left: 33.9%; transform: translateX(-50%); width: 72px; height: 72px; }
+  .node-center-company { top: 26%; left: 37.1%; transform: translateX(-50%); width: 72px; height: 72px; }
+  .stack-card h3,
+  .pathway-card h3,
+  .timeline-item h3,
+  .principle h3 { font-size: 1.28rem; }
+  .team-reveal-card {
+    min-height: 360px;
+    cursor: default;
   }
-  .ecosystem-node-label {
-    font-size: 0.62rem;
+  .team-reveal-card::after,
+  .team-reveal-content p {
+    opacity: 1;
+    transform: none;
   }
-  .ecosystem-node-description {
-    font-size: 0.56rem;
+  .team-reveal-overlay {
+    background: linear-gradient(180deg, rgba(5,5,5,0.08) 0%, rgba(5,5,5,0.22) 30%, rgba(5,5,5,0.84) 100%);
   }
-  .node-global { top: 50%; left: 50%; width: 144px; height: 144px; transform: translate(-50%, -50%); }
-  .node-bio { top: 13%; left: 50.6%; transform: translateX(-50%); }
-  .node-data { top: 20.5%; left: 66%; transform: translateX(-50%); width: 82px; height: 82px; }
-  .node-cpi { top: 42%; left: 64%; transform: translateX(-50%); }
-  .node-pharmacy { top: 65.5%; left: 60%; transform: translateX(-50%); width: 82px; height: 82px; }
-  .node-diagnostics { top: 59%; left: 41%; transform: translateX(-50%); }
-  .node-ai { top: 45%; left: 33.9%; transform: translateX(-50%); }
-  .node-center-company { top: 26%; left: 37.1%; transform: translateX(-50%); }
 }
