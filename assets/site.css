@@ -507,9 +507,9 @@ section { padding: 120px 0; }
 }
 .node-global { top: 50%; left: 50%; width: 170px; height: 170px; transform: translate(-50%, -50%); }
 .node-bio { top: 10%; left: 50.6%; transform: translateX(-50%); }
-.node-data { top: 22.2%; left: 64%; transform: translateX(-50%); }
+.node-data { top: 19.5%; left: 66.5%; transform: translateX(-50%); width: 92px; height: 92px; }
 .node-cpi { top: 42%; left: 64%; transform: translateX(-50%); }
-.node-pharmacy { top: 72.4%; left: 61.4%; transform: translateX(-50%); }
+.node-pharmacy { top: 68.5%; left: 60.2%; transform: translateX(-50%); width: 92px; height: 92px; }
 .node-diagnostics { top: 62%; left: 41%; transform: translateX(-50%); }
 .node-ai { top: 45.3%; left: 33.9%; transform: translateX(-50%); }
 .node-center-company { top: 24.7%; left: 37.1%; transform: translateX(-50%); }
@@ -1054,9 +1054,9 @@ footer {
   }
   .node-global { top: 50%; left: 50%; width: 156px; height: 156px; transform: translate(-50%, -50%); }
   .node-bio { top: 11%; left: 50.6%; transform: translateX(-50%); }
-  .node-data { top: 22%; left: 64%; transform: translateX(-50%); }
+  .node-data { top: 20%; left: 66%; transform: translateX(-50%); width: 88px; height: 88px; }
   .node-cpi { top: 42%; left: 64%; transform: translateX(-50%); }
-  .node-pharmacy { top: 70%; left: 61.4%; transform: translateX(-50%); }
+  .node-pharmacy { top: 67%; left: 60%; transform: translateX(-50%); width: 88px; height: 88px; }
   .node-diagnostics { top: 61%; left: 41%; transform: translateX(-50%); }
   .node-ai { top: 45%; left: 33.9%; transform: translateX(-50%); }
   .node-center-company { top: 25%; left: 37.1%; transform: translateX(-50%); }
@@ -1126,9 +1126,9 @@ footer {
   }
   .node-global { top: 50%; left: 50%; width: 144px; height: 144px; transform: translate(-50%, -50%); }
   .node-bio { top: 13%; left: 50.6%; transform: translateX(-50%); }
-  .node-data { top: 23%; left: 64%; transform: translateX(-50%); }
+  .node-data { top: 20.5%; left: 66%; transform: translateX(-50%); width: 82px; height: 82px; }
   .node-cpi { top: 42%; left: 64%; transform: translateX(-50%); }
-  .node-pharmacy { top: 67%; left: 61.4%; transform: translateX(-50%); }
+  .node-pharmacy { top: 65.5%; left: 60%; transform: translateX(-50%); width: 82px; height: 82px; }
   .node-diagnostics { top: 59%; left: 41%; transform: translateX(-50%); }
   .node-ai { top: 45%; left: 33.9%; transform: translateX(-50%); }
   .node-center-company { top: 26%; left: 37.1%; transform: translateX(-50%); }

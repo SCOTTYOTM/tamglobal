@@ -122,20 +122,36 @@ if (heroVideo) {
 }
 
 const closingVideo = document.querySelector('.closing-video');
-if (closingVideo && !prefersReducedMotion) {
-  const syncClosingVideo = () => {
-    const section = document.querySelector('.closing');
-    if (!section) return;
-    const rect = section.getBoundingClientRect();
-    const viewport = window.innerHeight || 1;
-    const progress = Math.min(1, Math.max(0, (viewport - rect.top) / (viewport + rect.height)));
-    if (closingVideo.duration && Number.isFinite(closingVideo.duration)) {
-      closingVideo.currentTime = closingVideo.duration * progress;
-    }
-  };
+if (closingVideo) {
+  if (!prefersReducedMotion) {
+    const syncClosingVideo = () => {
+      const section = document.querySelector('.closing');
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const viewport = window.innerHeight || 1;
+      const rawProgress = (viewport - rect.top) / (viewport * 0.12);
+      const progress = Math.min(1, Math.max(0, rawProgress));
+      if (closingVideo.duration && Number.isFinite(closingVideo.duration)) {
+        const target = closingVideo.duration * progress;
+        if (Math.abs(closingVideo.currentTime - target) > 0.03) {
+          closingVideo.currentTime = target;
+        }
+      }
+    };
 
-  closingVideo.addEventListener('loadedmetadata', syncClosingVideo, { once: true });
-  closingVideo.play().then(() => closingVideo.pause()).catch(() => {});
-  window.addEventListener('scroll', syncClosingVideo, { passive: true });
-  window.addEventListener('resize', syncClosingVideo, { passive: true });
+    const bootstrapClosingVideo = () => {
+      closingVideo.play().catch(() => {
+        closingVideo.setAttribute('controls', 'controls');
+      });
+      syncClosingVideo();
+    };
+
+    closingVideo.addEventListener('loadedmetadata', bootstrapClosingVideo, { once: true });
+    window.addEventListener('scroll', syncClosingVideo, { passive: true });
+    window.addEventListener('resize', syncClosingVideo, { passive: true });
+  } else {
+    closingVideo.play().catch(() => {
+      closingVideo.setAttribute('controls', 'controls');
+    });
+  }
 }
